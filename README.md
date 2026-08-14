@@ -6,10 +6,13 @@ registered as a **Search tab** inside
 
 - Keyword search across the session workspace: file **names** and file
   **contents**, grouped per file with line numbers
+- VS Code-style search rules: **files to include / files to exclude** glob
+  patterns (comma-separated, supports `**`, `*`, `?`, `{a,b}`), regular
+  expression queries (`.*` toggle), and case toggle (`Aa`)
 - Click a match to open the file in better-sidebar's built-in editor
-- Bounded scans (skips `.git`/`node_modules`/hidden files; caps on files,
-  matches, and line length — truncation is reported honestly)
-- Case-insensitive by default, `Aa` toggle for case-sensitive
+- VS Code default excludes: hidden files, `.git`, `node_modules`, `dist`,
+  `build`, `.next`, `target` etc. are skipped; caps on files, matches, and
+  line length are reported honestly as truncation
 
 ## Install
 
