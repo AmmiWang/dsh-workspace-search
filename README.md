@@ -1,5 +1,7 @@
 # dsh-workspace-search
 
+[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
+
 VS Code-style workspace keyword search for the DeepSeek Harness (dsh) web GUI,
 registered as a **Search tab** inside
 [dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar).
