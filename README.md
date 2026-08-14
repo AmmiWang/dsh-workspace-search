@@ -4,6 +4,9 @@ VS Code-style workspace keyword search for the DeepSeek Harness (dsh) web GUI,
 registered as a **Search tab** inside
 [dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar).
 
+<img width="734" height="238" alt="image" src="https://github.com/user-attachments/assets/0aceb14e-b4f5-4ab4-bf1e-72da35d147b9" />
+
+
 - Keyword search across the session workspace: file **names** and file
   **contents**, grouped per file with line numbers
 - VS Code-style search rules: **files to include / files to exclude** glob
