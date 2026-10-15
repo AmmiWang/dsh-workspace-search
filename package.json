@@ -13,23 +13,38 @@
     "lib",
     "cordis.patch.yml",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "dsh": {
+    "manifestVersion": 1,
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
     "client": {
-      "platform": "web"
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": ">=4.0.1",
-    "@deepseek-ai/schemastery": ">=3.18.1",
-    "dsh-better-sidebar": ">=0.4.0"
+    "react": "^18.2.0",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "dsh-better-sidebar": "^0.4.0"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=20"
+  },
+  "author": "AmmiWang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmmiWang/dsh-workspace-search.git"
+  },
+  "homepage": "https://github.com/AmmiWang/dsh-workspace-search#readme",
+  "bugs": {
+    "url": "https://github.com/AmmiWang/dsh-workspace-search/issues"
   },
   "license": "MIT",
   "keywords": [
