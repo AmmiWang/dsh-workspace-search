@@ -1,18 +1,20 @@
 # dsh-workspace-search bundle patch: register the plugin row.
-# NOTE: as of 2026-10-14 the host module declares its own dependencies
-# (`export const inject = ['connection', 'webServer']`), because
-# `connection.rpc.handle()` registers the HTTP route through the ACCESSOR
-# fiber's `ctx.webServer` (cordis `getTraceable` rebinds service.ctx) — a
-# fiber without `webServer` in its inject list throws
-# `cannot get property "webServer" without inject` at activation.
-# Row-level `inject:` here is UNION-merged (cordis-plugin-loader:
+# NOTE (2026-10-15): the host half serves POST /workspace-search/search as a
+# plain webServer prefix route (the dsh-side-panel / dsh-better-sidebar
+# pattern). It deliberately does NOT use connection.rpc.handle(): that API
+# rebinds the registration owner to dsh-client-connection's own fiber
+# (inject ["credentials"] only), so `owner.webServer.register(...)` throws
+# `cannot get property "webServer" without inject` regardless of what this
+# row or the module declares.
+# The host module self-declares `inject = ["webServer"]`; the row-level
+# `inject:` below is UNION-merged (cordis-plugin-loader:
 # Inject.resolve(entry.options.inject, fiber.inject)) and kept only as
 # belt-and-suspenders: a same-id entry in the profile layer re-resolves the
 # row and may drop it. Host-side real services only.
 # NOTE: the sidebar tab-registry service is `betterSidebar` and lives in the
 # CLIENT context (provided by dsh-better-sidebar's client half); it is already
-# declared in lib/client.js (`inject = ["betterSidebar", "connection"]`) —
-# do NOT put it in this host row, an unsatisfiable name parks the fiber.
+# declared in lib/client.js (`inject = ["betterSidebar"]`) — do NOT put it in
+# this host row, an unsatisfiable name parks the fiber.
 - insert:
     - id: workspace-search
       name: dsh-workspace-search

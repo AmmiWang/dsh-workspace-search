@@ -75,10 +75,12 @@ All fields optional (profile patch layer):
 
 ## How it works
 
-Dual-face bundle. The host half registers a Connection RPC channel
-`/workspace-search` (loopback trust fence, same as the built-in `/api`).
-The browser half registers a tab through `ctx.betterSidebar.registerTab`.
-Search results open in the sidebar editor via `openTab({type: 'editor'})`.
+Dual-face bundle. The host half serves `POST /workspace-search/search` as a
+plain **webServer prefix route** (loopback/origin trust fence, same posture as
+the built-in `/api` gateway). The browser half registers a tab through
+`ctx.betterSidebar.registerTab` and talks to the route with same-origin
+`fetch`. Search results open in the sidebar editor via
+`openTab({type: 'editor'})`.
 
 ## License
 

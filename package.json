@@ -1,6 +1,6 @@
 {
   "name": "dsh-workspace-search",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "VS Code-style workspace keyword search tab for the dsh web GUI, registered into dsh-better-sidebar",
   "type": "module",
   "main": "./lib/index.js",
@@ -30,7 +30,6 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/schemastery": "^3.18.1",
     "dsh-better-sidebar": "^0.4.0"
   },
