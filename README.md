@@ -12,14 +12,22 @@ registered as a **Search tab** inside
 
 
 - Keyword search across the session workspace: file **names** and file
-  **contents**, grouped per file with line numbers
+  **contents**, grouped per file with line numbers; query occurrences are
+  **highlighted** inside match lines and matched file names
+- Click a match line to open the file in better-sidebar's built-in editor
+  **and jump to that line**; click the file row to open the file, the caret
+  toggles the group
 - VS Code-style search rules: **files to include / files to exclude** glob
   patterns (comma-separated, supports `**`, `*`, `?`, `{a,b}`), regular
   expression queries (`.*` toggle), and case toggle (`Aa`)
 - Click a match to open the file in better-sidebar's built-in editor
-- VS Code default excludes: hidden files, `.git`, `node_modules`, `dist`,
-  `build`, `.next`, `target` etc. are skipped; caps on files, matches, and
-  line length are reported honestly as truncation
+- VS Code default excludes: hidden files, `.git`, `dist`, `build`, `.next`,
+  `target` etc. are skipped; the exclude box ships with a default
+  `node_modules` pattern you can clear to search vendored trees (a bare
+  directory name excludes same-named dirs at any depth); caps on files,
+  matches, and line length are reported honestly as truncation
+- Search results are fully expanded by default; collapse any file group and
+  the state sticks until the next search
 
 ## Install
 

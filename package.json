@@ -1,6 +1,6 @@
 {
   "name": "dsh-workspace-search",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "VS Code-style workspace keyword search tab for the dsh web GUI, registered into dsh-better-sidebar",
   "type": "module",
   "main": "./lib/index.js",
